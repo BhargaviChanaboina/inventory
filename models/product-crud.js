@@ -68,7 +68,7 @@ router.post('/addMany/:warehouseId', (req, res) => {
   if (!req.params.warehouseId) return res.send('Please provide the warehouse Id in the api');
   if (!body.length) return res.json([]);
   body.forEach(record => {
-    record.wareHouse = req.params.wareHouseId;
+    record.wareHouse = req.params.warehouseId;
   });
   product.insertMany(body, { ordered: false }, (er, data) => {
     if (er) res.send(er);
@@ -99,7 +99,7 @@ router.put('/:id', (req, res) => {
 // deletes all the records that matches the query exactly
 router.delete('/', (req, res) => {
   if (!req.query || !Object.keys(req.query).length) return res.send('Please add query params to delete');
-  product.deleteMany(req.body.query, (er, response) => {
+  product.deleteMany(req.query, (er, response) => {
     if (er) return res.send(er);
     return res.json(response);
   });
