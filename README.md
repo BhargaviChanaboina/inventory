@@ -21,7 +21,7 @@ capacity: capacity of warehouse (optional)
 
 ## Apis to interact with warehouse data
 
-- Create a new warehouse
+- ### Create a new warehouse
 POST API - http://localhost:4000/warehouse/add
 
 Example: request body
@@ -136,7 +136,7 @@ response
 
 ![image](https://user-images.githubusercontent.com/36034208/118217132-7a005880-b492-11eb-9924-17fda3f9fd81.png)
 
-- Delete a product
+- ### Delete a product
 
 DELETE API-  http://localhost:4000/product?{filter}
 
